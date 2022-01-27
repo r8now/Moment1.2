@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - moment1._2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/moment1._2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+    <header>
+    
+        <h1>  <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/MiunLogga.png" asp-append-version="true" width="150px" /></a></h1>
+      
+           @{
+               var date = DateTime.Now;
+                }
+                  <!--Visar Datumet-->
+                <p>Dagens Datum:  @date.ToString("yyyy/MM/dd")<br />
+                <!--Visar klockslaget-->
+                Klockan är:  @date.ToString("HH:m")</p>
+    
+            
+
+    </header>
+      <div class="menu">
+       <div class="bar bar-1 "> </div>
+       <div class="bar bar-2 "> </div>
+       <div class="bar bar-3"> </div>
+   </div>
+
+        <nav>
+
+  
+               
+        
+               
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Razor">Razor</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
+                        </li>
+                     
+                    </ul>
+               
+          
+        </nav>
+   
+   
+        <main role="main" class="pb-3">
+           
+            @RenderBody()
+            
+        </main>
+  
+
+    <footer class="border-top footer text-muted">
+      
+            &copy; 2022 - moment1._2 - Skapad av Hosein <a asp-area="" asp-page="/Index">Index</a>
+       
+    </footer>
+     </div>
+
+      <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

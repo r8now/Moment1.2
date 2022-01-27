@@ -1,0 +1,65 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Razor";
+}
+<h1>@ViewData["Title"]</h1>
+
+     @{
+               var date = DateTime.Now;
+                }
+                  <!--Visar Datumet-->
+                <p><strong>Datum/klockslag:</strong>  @date.ToString("yyyy/MM/dd") @date.ToString("HH:m")<br />
+             
+<br />
+@{
+
+    //todays day
+    var dates = DateTime.Now;
+    string dayOfWeek = dates.ToString("dddd");
+}
+
+<p>Idag är det @dates.ToString("dddd")</p>
+
+<!--If sats som kollar om det är måndag eller ej-->
+@if (dayOfWeek == "Monday") { 
+<p>Idag är det Måndag!</p>
+} else {
+<p>Det är ej måndag idag...</p>
+}
+
+
+@{
+
+
+    string title = "Kurser jag läst";
+    var courses = new string[]
+    {
+        "DT057G Webbutveckling I",
+        "DT084G Introduktion till programmering med JavaScript",
+        "DT163G Digital bildbehandling för webb",
+        "DT008G Typografi och form för webb",
+        "DT093G Webbutveckling II",
+        "DT003G Databaser",
+        "DT068G Webbanvändbarhet",
+        "DT152G Webbdesign för CMS",
+        "DT173G Webbutveckling III",
+        "IK060G Projektledning",
+        "DT071G Programmering i C#.NET"
+                    };
+}
+
+
+<h2>@title</h2>
+
+
+
+
+<ul>
+    @foreach (var course in courses)
+    {
+        <li>@course</li>
+    }
+</ul>
+
+

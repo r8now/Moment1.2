@@ -1,0 +1,176 @@
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+margin: 0 auto;
+padding: 0;
+max-width:1060px;
+}
+
+footer {
+   
+  text-align: center;
+   
+}
+
+.container {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 15px;
+    grid-template-areas:
+        "header header header header header header"
+        "nav main main main main main "
+        "nav main main main main main"
+        "nav main main main main main"
+        "footer footer footer footer footer footer"
+}
+
+header {
+    grid-area: header;
+    padding: 10px;
+    background-color:lightseagreen;
+    border:2px solid;
+    margin-top: 10px;
+
+    margin-bottom: 0px;
+    padding-bottom:0px;
+  
+}
+
+nav {
+    grid-area: nav;
+    background-color: lightcoral;
+    border: 2px solid;
+}
+
+main {
+    grid-area: main;
+    background-color: lightgreen;
+    border: 2px solid;
+}
+
+
+footer {
+    grid-area: footer;
+    border: 2px solid;
+}
+.menu {
+    grid-area: menu;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+header p {
+    float: right;
+}
+
+header h1 {
+        float: left;
+    }
+
+.menu {
+ 
+ padding:0px;
+
+ background-color:red;
+ cursor: pointer;
+
+}
+
+.bar{
+    width:30px;
+    height:3px;
+    background-color: blue;
+    margin: 3px 0;
+    transition: 0.4s;
+
+}
+.menu.open .bar-1{
+transform: rotate(40deg);
+
+}
+.menu.open .bar-2 {
+  opacity:0;
+}
+
+.menu.open .bar-3 {
+    transform: rotate(-40deg);
+    margin-top: -12px;
+}
+
+@media (max-width: 768px) {
+
+
+    nav {
+        height: 0;
+        overflow: hidden;
+        
+        border: none;
+    }
+    .menu {
+        padding: 20px;
+        background-color: none;
+       
+    }
+
+    nav.navbar {
+        height: 150px;
+        min-width:100px;
+        float: left;
+        border: none;
+    }
+    .bar {
+        float: left;
+        overflow: hidden;
+    }
+
+    .container {
+        grid-template-areas:
+            "header header header header header header"
+            "menu main main main main main"
+            "navbar main main main main main"
+            ". main main main main main"
+            "footer footer footer footer footer footer"
+    }
+    .navbar {
+            height: 200px;
+          
+        }
+
+    .navbar-item {
+        display: none;
+        border: none;
+        text-decoration: none;
+    }
+  
+}
+
+
+@media (min-width: 768px){
+    .menu{
+        display:none;
+        max-width: 90px;
+    }
+    .container{
+        gap:10px;
+    }
+    .bar  {
+        padding: 0px;
+        margin: 0px;
+    }
+    .bar {
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+
+}
